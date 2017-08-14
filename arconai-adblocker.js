@@ -13,9 +13,12 @@ var canRunAds = false;
 (function() {
     'use strict';
     console.log("function");
-    var remove = function(elem){
+    function remove(elem){
         elem.parentNode.removeChild(elem);
-    };
+    }
+    function getElementByXpath(path) {
+        return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    }
 
     document.onreadystatechange = function(e)
     {
@@ -25,6 +28,8 @@ var canRunAds = false;
             remove(document.getElementById("videoadv"));
             remove(document.getElementsByClassName("wrapper")[0]);
             remove(document.getElementsByClassName("wrapper")[1]);
+            remove(getElementByXpath("/html/body/div[2]/div/div/div[2]"));
+            getElementByXpath("/html/body/div[2]/div/div/div").style.width="100%";
             console.log("done arconai anti-adblock");
         }
     };
