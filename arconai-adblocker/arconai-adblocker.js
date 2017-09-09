@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       joeyism
-// @match        http://arconaitv.me/*
+// @include      http*://*.arconaitv.*/*
 // @grant        none
 // @run-at document-start
 // ==/UserScript==
